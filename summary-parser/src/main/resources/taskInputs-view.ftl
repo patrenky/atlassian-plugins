@@ -1,0 +1,1 @@
+[@ww.label name="testFilePattern" labelKey="testFilePattern.label"/]
