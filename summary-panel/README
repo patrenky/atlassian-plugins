@@ -1,6 +1,0 @@
-# Build Summary panel using Atlassian SDK
-
-- `atlas-run`
-- Quick Reload - `atlas-mvn package` (in other terminal)
-
-TODO plugin chainresult.summary.right vs jobresult.summary.right

@@ -20,7 +20,10 @@
 
         <context>summary-panel</context>
     </web-resource>
-
     
+    <web-panel key="summary-panel" name="Summary Panel" location="chainresult.summary.right" weight="1000">
+        <context-provider class="com.continuent.bamboo.SummaryPanel" />
+        <resource name="view" type="velocity" location="templates/panel.vm" />
+    </web-panel>
     
 </atlassian-plugin>
