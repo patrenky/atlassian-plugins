@@ -37,6 +37,14 @@ public class SummaryPanel implements ContextProvider{
             if (planKey.length() < 1 || buildNum.length() < 1) {
                 failed = true;
             }
+
+            // match only CT-TCTBT or T-TTRBT
+            String matchPlans = "^CT-T(CT|TR)BT(\\d+)?$";
+            Pattern patternPlans = Pattern.compile(matchPlans);
+
+            if (!patternPlans.matcher(planKey).matches()) {
+                failed = true;
+            }
         
             // /artifact/$planKey/$jobKey/build-$buildNum/Logs/0summary.html
             summaryLink += "/" + planKey;

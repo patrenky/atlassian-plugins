@@ -1,3 +1,4 @@
 #if ($summaryLink != "NULL")
     <iframe src="$summaryLink" style="width:99%;height:300%;border:none"></iframe>
+    <a href="$summaryLink" target="blank">... full log</a>
 #end
