@@ -18,7 +18,7 @@ public class SummaryPanel implements ContextProvider{
 
     @Override
     public Map getContextMap(Map context) {
-        String summaryLink = "/artifact";
+        String summaryLink = "/bamboo/artifact";
         boolean failed = false;
 
         try {
@@ -38,15 +38,16 @@ public class SummaryPanel implements ContextProvider{
                 failed = true;
             }
 
-            // match only CT-TCTBT or T-TTRBT
-            String matchPlans = "^CT-T(CT|TR)BT(\\d+)?$";
-            Pattern patternPlans = Pattern.compile(matchPlans);
+            // match only CT-TEST
+            String matchPlan = "^CT-TEST(\\d+)?$";
+            Pattern patternPlan = Pattern.compile(matchPlan);
 
-            if (!patternPlans.matcher(planKey).matches()) {
+            if (!patternPlan.matcher(planKey).matches()) {
                 failed = true;
             }
         
-            // /artifact/$planKey/$jobKey/build-$buildNum/Logs/0summary.html
+            // old: /artifact/$planKey/$jobKey/build-$buildNum/Logs/0summary.html
+            // new: /artifact/QA-HOT0/shared/build-01/ln-build_logs/qa-bamboo-2/0summary.html
             summaryLink += "/" + planKey;
             summaryLink += "/" + jobKey;
             summaryLink += "/build-" + buildNum;

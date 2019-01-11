@@ -6,4 +6,4 @@
 ## Pre-requisities
 
 - master job with ID `RES`
-- artifact `Logs` where is located files including `0summary.html` file
+- artifact `Logs` where are located files including `0summary.html` file
