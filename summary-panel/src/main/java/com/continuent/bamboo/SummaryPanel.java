@@ -18,7 +18,7 @@ public class SummaryPanel implements ContextProvider{
 
     @Override
     public Map getContextMap(Map context) {
-        String summaryLink = "/bamboo/artifact";
+        String summaryLink = "/artifact";
         boolean failed = false;
 
         try {

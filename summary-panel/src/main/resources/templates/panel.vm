@@ -1,4 +1,16 @@
 #if ($summaryLink != "NULL")
-    <iframe src="$summaryLink" style="width:99%;height:300%;border:none"></iframe>
-    <a href="$summaryLink" target="blank">... full log</a>
+    <div id="summary-panel" style="position: relative; height: 51em">
+        <iframe src="$summaryLink" id="summary-frame" onload="iframeInit()"
+            style="position: absolute; width: 200%; height: 40em; right: 0; top: 9em; border: solid 1px #ccc; overflow: scroll; background: white;">
+        </iframe>
+        <a href="$summaryLink" target="blank" style="position: absolute; bottom: 0; right: 1em;">... full log</a>
+    </div>
+    <script>
+        function iframeInit() {
+            var iframeContent = document.getElementById("summary-frame").contentWindow.document.body.innerHTML;
+            if (iframeContent.indexOf("<h1>Page not found</h1>") >= 0) {
+                document.getElementById("summary-panel").style.display = 'none';
+            }
+        }
+    </script>
 #end
