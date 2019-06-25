@@ -1,0 +1,5 @@
+<style>
+    #fieldArea_runParametrisedManualBuild_customRevision {
+        display: none;
+    }
+</style>
